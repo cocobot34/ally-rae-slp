@@ -47,7 +47,7 @@ export default function HomePage() {
       <section className="relative bg-surface overflow-hidden">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32 lg:py-40">
           <div className="max-w-2xl">
-            <p className="text-accent font-semibold text-sm tracking-wide uppercase mb-4">
+            <p className="text-primary font-semibold text-sm tracking-wide uppercase mb-4">
               Speech-Language Pathologist · Cleveland, Ohio
             </p>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-neutral-dark leading-tight mb-6">
@@ -177,6 +177,21 @@ export default function HomePage() {
               <p>CPR Certified</p>
               <p className="text-xs text-neutral-mid/70">Current</p>
             </div>
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Testimonials Placeholder */}
+      <AnimatedSection className="py-16 bg-surface">
+        <div className="mx-auto max-w-6xl px-6 text-center">
+          <div className="max-w-xl mx-auto bg-bg rounded-2xl p-8 border border-surface">
+            <p className="text-3xl mb-4" aria-hidden="true">
+              💬
+            </p>
+            <p className="text-neutral-mid italic text-lg leading-relaxed">
+              &ldquo;Testimonials from clinical colleagues and supervisors
+              coming soon.&rdquo;
+            </p>
           </div>
         </div>
       </AnimatedSection>

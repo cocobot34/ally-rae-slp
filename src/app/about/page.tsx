@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   description:
     'Learn about Ally Rae Schwab — a speech-language pathologist specializing in adult medical rehabilitation in Cleveland, Ohio. MS from Cleveland State University.',
   alternates: { canonical: 'https://allyraespeech.com/about' },
+  keywords: [
+    'Ally Rae Schwab SLP',
+    'Cleveland State University speech pathology',
+    'CF-SLP Cleveland',
+    'speech language pathologist Cleveland Ohio',
+  ],
 }
 
 const personSchema = {
@@ -42,7 +48,7 @@ export default function AboutPage() {
       <section className="bg-surface py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <div className="max-w-3xl">
-            <p className="text-accent font-semibold text-sm tracking-wide uppercase mb-4">
+            <p className="text-primary font-semibold text-sm tracking-wide uppercase mb-4">
               About
             </p>
             <h1 className="font-serif text-4xl md:text-5xl text-neutral-dark mb-6">
@@ -152,9 +158,10 @@ export default function AboutPage() {
                 <h3 className="font-semibold text-neutral-dark text-lg">
                   Clinical Fellowship (CF-SLP)
                 </h3>
+                {/* TODO: Update to "CCC-SLP" once certificate is officially conferred by ASHA */}
                 <p className="text-neutral-mid">
-                  Completing Clinical Fellowship under ASHA certification
-                  requirements
+                  Completing ASHA-required Clinical Fellowship under the
+                  supervision of a licensed CCC-SLP
                 </p>
                 <p className="text-neutral-mid text-sm mt-1">
                   CCC-SLP certification in progress
@@ -177,7 +184,7 @@ export default function AboutPage() {
                 <h3 className="font-semibold text-neutral-dark text-lg">
                   Medical SLP — Skilled Nursing &amp; Rehabilitation
                 </h3>
-                <p className="text-accent text-sm font-medium mb-2">
+                <p className="text-primary text-sm font-medium mb-2">
                   Brentwood Healthcare Center, Northfield, OH
                 </p>
                 <ul className="text-neutral-mid space-y-2 text-[15px] leading-relaxed list-disc list-inside">
@@ -203,7 +210,7 @@ export default function AboutPage() {
                 <h3 className="font-semibold text-neutral-dark text-lg">
                   Adult Outpatient — Aphasia &amp; Voice Therapy
                 </h3>
-                <p className="text-accent text-sm font-medium mb-2">
+                <p className="text-primary text-sm font-medium mb-2">
                   Cleveland State University Speech &amp; Hearing Clinic
                 </p>
                 <ul className="text-neutral-mid space-y-2 text-[15px] leading-relaxed list-disc list-inside">

@@ -16,7 +16,7 @@ export default function ContactPage() {
       <section className="bg-surface py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <div className="max-w-3xl">
-            <p className="text-accent font-semibold text-sm tracking-wide uppercase mb-4">
+            <p className="text-primary font-semibold text-sm tracking-wide uppercase mb-4">
               Contact
             </p>
             <h1 className="font-serif text-4xl md:text-5xl text-neutral-dark mb-6">

@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   description:
     'Specialized adult speech therapy services in Cleveland, Ohio — dysphagia, aphasia, cognitive-communication disorders, voice therapy, TBI rehabilitation, and motor speech disorders.',
   alternates: { canonical: 'https://allyraespeech.com/services' },
+  keywords: [
+    'dysphagia treatment Cleveland',
+    'aphasia speech therapy Ohio',
+    'TBI rehab SLP',
+    'voice disorder specialist Cleveland',
+    'adult speech therapy services',
+    'cognitive communication therapy',
+  ],
 }
 
 const services = [
@@ -72,7 +80,7 @@ export default function ServicesPage() {
       <section className="bg-surface py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <div className="max-w-3xl">
-            <p className="text-accent font-semibold text-sm tracking-wide uppercase mb-4">
+            <p className="text-primary font-semibold text-sm tracking-wide uppercase mb-4">
               Services
             </p>
             <h1 className="font-serif text-4xl md:text-5xl text-neutral-dark mb-6">
