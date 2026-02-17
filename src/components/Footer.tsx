@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { CONTACT_EMAIL } from '@/lib/constants'
 
 export function Footer() {
   return (
@@ -54,10 +55,10 @@ export function Footer() {
               <li>Cleveland, Ohio</li>
               <li>
                 <a
-                  href="mailto:Allyrschwab@gmail.com"
+                  href={`mailto:${CONTACT_EMAIL}`}
                   className="hover:text-white transition-colors"
                 >
-                  Allyrschwab@gmail.com
+                  {CONTACT_EMAIL}
                 </a>
               </li>
               <li>

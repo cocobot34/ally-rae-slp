@@ -1,25 +1,51 @@
 'use client'
 
 import { useState, FormEvent } from 'react'
+import { CONTACT_EMAIL } from '@/lib/constants'
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState(false)
+  const [loading, setLoading] = useState(false)
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    setLoading(true)
+    setError(false)
+
     const form = e.currentTarget
     const data = new FormData(form)
-    const name = data.get('name') as string
-    const email = data.get('email') as string
-    const message = data.get('message') as string
-    const referral = data.get('referral') as string
 
-    const subject = encodeURIComponent(`Website Inquiry from ${name}`)
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nHow they found you: ${referral}\n\nMessage:\n${message}`
-    )
-    window.location.href = `mailto:Allyrschwab@gmail.com?subject=${subject}&body=${body}`
-    setSubmitted(true)
+    try {
+      // TODO: Replace with Formspree endpoint or Resend API route once configured
+      // For now, fall back to mailto as a last resort
+      const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID
+      if (formspreeId) {
+        const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
+          method: 'POST',
+          body: data,
+          headers: { Accept: 'application/json' },
+        })
+        if (!res.ok) throw new Error('Form submission failed')
+        setSubmitted(true)
+      } else {
+        // Fallback: mailto (unreliable but works as placeholder)
+        const name = data.get('name') as string
+        const email = data.get('email') as string
+        const message = data.get('message') as string
+        const referral = data.get('referral') as string
+        const subject = encodeURIComponent(`Website Inquiry from ${name}`)
+        const body = encodeURIComponent(
+          `Name: ${name}\nEmail: ${email}\nHow they found you: ${referral}\n\nMessage:\n${message}`
+        )
+        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`
+        setSubmitted(true)
+      }
+    } catch {
+      setError(true)
+    } finally {
+      setLoading(false)
+    }
   }
 
   if (submitted) {
@@ -30,13 +56,13 @@ export function ContactForm() {
           Thank you!
         </h3>
         <p className="text-neutral-mid">
-          Your email client should have opened with your message. If not, you
-          can email me directly at{' '}
+          Your message has been sent. I typically respond within 1–2 business
+          days. If you don&apos;t hear back, feel free to reach out at{' '}
           <a
-            href="mailto:Allyrschwab@gmail.com"
+            href={`mailto:${CONTACT_EMAIL}`}
             className="text-primary underline"
           >
-            Allyrschwab@gmail.com
+            {CONTACT_EMAIL}
           </a>
           .
         </p>
@@ -50,6 +76,16 @@ export function ContactForm() {
         <strong>Note:</strong> This form is for general inquiries only. Please
         do not include any personal health information.
       </div>
+
+      {error && (
+        <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-700">
+          Something went wrong. Please try again or email me directly at{' '}
+          <a href={`mailto:${CONTACT_EMAIL}`} className="underline">
+            {CONTACT_EMAIL}
+          </a>
+          .
+        </div>
+      )}
 
       <div>
         <label
@@ -120,9 +156,10 @@ export function ContactForm() {
 
       <button
         type="submit"
-        className="bg-primary text-white px-8 py-3.5 rounded-full font-semibold hover:bg-primary-dark transition-colors w-full md:w-auto"
+        disabled={loading}
+        className="bg-primary text-white px-8 py-3.5 rounded-full font-semibold hover:bg-primary-dark transition-colors w-full md:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        Send Message
+        {loading ? 'Sending...' : 'Send Message'}
       </button>
     </form>
   )

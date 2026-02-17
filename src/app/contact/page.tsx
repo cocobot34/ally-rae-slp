@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { ContactForm } from '@/components/ContactForm'
 import { AnimatedSection } from '@/components/AnimatedSection'
+import { CONTACT_EMAIL } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -42,10 +43,10 @@ export default function ContactPage() {
                   Email
                 </h2>
                 <a
-                  href="mailto:Allyrschwab@gmail.com"
+                  href={`mailto:${CONTACT_EMAIL}`}
                   className="text-primary hover:text-primary-dark transition-colors"
                 >
-                  Allyrschwab@gmail.com
+                  {CONTACT_EMAIL}
                 </a>
               </div>
               <div>

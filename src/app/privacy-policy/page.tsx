@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { CONTACT_EMAIL } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -62,10 +63,10 @@ export default function PrivacyPolicyPage() {
           If you have questions about this privacy policy, please contact Ally
           Rae at{' '}
           <a
-            href="mailto:Allyrschwab@gmail.com"
+            href={`mailto:${CONTACT_EMAIL}`}
             className="text-primary hover:text-primary-dark"
           >
-            Allyrschwab@gmail.com
+            {CONTACT_EMAIL}
           </a>
           .
         </p>

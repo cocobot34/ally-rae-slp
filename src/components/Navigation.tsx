@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const links = [
@@ -13,6 +14,7 @@ const links = [
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
 
   return (
     <header className="sticky top-0 z-50 bg-bg/90 backdrop-blur-md border-b border-surface">
@@ -30,7 +32,12 @@ export function Navigation() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-neutral-dark hover:text-primary transition-colors text-[15px] font-medium"
+              aria-current={pathname === link.href ? 'page' : undefined}
+              className={`text-[15px] font-medium transition-colors ${
+                pathname === link.href
+                  ? 'text-primary'
+                  : 'text-neutral-dark hover:text-primary'
+              }`}
             >
               {link.label}
             </Link>
@@ -48,7 +55,8 @@ export function Navigation() {
           className="md:hidden p-2 text-neutral-dark"
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
-          aria-label="Toggle navigation menu"
+          aria-controls="mobile-menu"
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
         >
           <svg
             className="w-6 h-6"
@@ -79,6 +87,7 @@ export function Navigation() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -90,7 +99,12 @@ export function Navigation() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-neutral-dark hover:text-primary transition-colors font-medium"
+                  aria-current={pathname === link.href ? 'page' : undefined}
+                  className={`font-medium transition-colors ${
+                    pathname === link.href
+                      ? 'text-primary'
+                      : 'text-neutral-dark hover:text-primary'
+                  }`}
                 >
                   {link.label}
                 </Link>
