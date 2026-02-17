@@ -43,12 +43,14 @@ export const metadata: Metadata = {
     title: 'Ally Rae Speech | Speech-Language Pathologist in Cleveland, Ohio',
     description:
       'Evidence-based speech therapy for adults in Cleveland, Ohio. Specializing in dysphagia, aphasia, voice disorders, and cognitive-communication.',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Ally Rae Speech — Cleveland SLP' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Ally Rae Speech | Cleveland SLP',
     description:
       'Evidence-based speech therapy for adults in Cleveland, Ohio.',
+    images: ['/og-image.png'],
   },
   metadataBase: new URL('https://allyraespeech.com'),
   alternates: {

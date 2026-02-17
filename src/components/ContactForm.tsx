@@ -1,12 +1,11 @@
 'use client'
 
 import { useState, FormEvent } from 'react'
-import { CONTACT_EMAIL } from '@/lib/constants'
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
-  const [error, setError] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -15,37 +14,24 @@ export function ContactForm() {
 
     const form = e.currentTarget
     const data = new FormData(form)
+    const name = data.get('name') as string
+    const email = data.get('email') as string
+    const message = data.get('message') as string
+    const referral = data.get('referral') as string
 
-    try {
-      // TODO: Replace with Formspree endpoint or Resend API route once configured
-      // For now, fall back to mailto as a last resort
-      const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID
-      if (formspreeId) {
-        const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
-          method: 'POST',
-          body: data,
-          headers: { Accept: 'application/json' },
-        })
-        if (!res.ok) throw new Error('Form submission failed')
-        setSubmitted(true)
-      } else {
-        // Fallback: mailto (unreliable but works as placeholder)
-        const name = data.get('name') as string
-        const email = data.get('email') as string
-        const message = data.get('message') as string
-        const referral = data.get('referral') as string
-        const subject = encodeURIComponent(`Website Inquiry from ${name}`)
-        const body = encodeURIComponent(
-          `Name: ${name}\nEmail: ${email}\nHow they found you: ${referral}\n\nMessage:\n${message}`
-        )
-        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`
-        setSubmitted(true)
-      }
-    } catch {
-      setError(true)
-    } finally {
-      setLoading(false)
-    }
+    // Try mailto as a best-effort approach, but be honest about it
+    const subject = encodeURIComponent(`Website Inquiry from ${name}`)
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nHow they found you: ${referral}\n\nMessage:\n${message}`
+    )
+
+    // Open mailto in a new context so we don't navigate away
+    const mailtoLink = `mailto:Allyrschwab@gmail.com?subject=${subject}&body=${body}`
+    const mailWindow = window.open(mailtoLink, '_self')
+
+    // Show honest messaging — we can't confirm delivery with mailto
+    setLoading(false)
+    setSubmitted(true)
   }
 
   if (submitted) {
@@ -53,16 +39,27 @@ export function ContactForm() {
       <div className="bg-surface rounded-2xl p-8 text-center">
         <p className="text-2xl mb-3">✉️</p>
         <h3 className="font-serif text-2xl text-neutral-dark mb-2">
-          Thank you!
+          Almost there!
         </h3>
-        <p className="text-neutral-mid">
-          Your message has been sent. I typically respond within 1–2 business
-          days. If you don&apos;t hear back, feel free to reach out at{' '}
+        <p className="text-neutral-mid mb-4">
+          Your email client should have opened with your message pre-filled.
+          If it didn&apos;t open, please email me directly:
+        </p>
+        <a
+          href="mailto:Allyrschwab@gmail.com"
+          className="inline-block bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary-dark transition-colors"
+        >
+          Allyrschwab@gmail.com
+        </a>
+        <p className="text-neutral-mid text-sm mt-4">
+          You can also reach me on{' '}
           <a
-            href={`mailto:${CONTACT_EMAIL}`}
+            href="https://www.linkedin.com/in/ally-schwab"
             className="text-primary underline"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            {CONTACT_EMAIL}
+            LinkedIn
           </a>
           .
         </p>
@@ -78,10 +75,10 @@ export function ContactForm() {
       </div>
 
       {error && (
-        <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-700">
-          Something went wrong. Please try again or email me directly at{' '}
-          <a href={`mailto:${CONTACT_EMAIL}`} className="underline">
-            {CONTACT_EMAIL}
+        <div className="bg-red-50 rounded-xl p-4 text-sm text-red-700">
+          Something went wrong. Please email me directly at{' '}
+          <a href="mailto:Allyrschwab@gmail.com" className="underline">
+            Allyrschwab@gmail.com
           </a>
           .
         </div>
@@ -92,7 +89,7 @@ export function ContactForm() {
           htmlFor="name"
           className="block text-sm font-medium text-neutral-dark mb-1.5"
         >
-          Name <span className="text-accent">*</span>
+          Name <span className="text-accent-dark">*</span>
         </label>
         <input
           type="text"
@@ -109,7 +106,7 @@ export function ContactForm() {
           htmlFor="email"
           className="block text-sm font-medium text-neutral-dark mb-1.5"
         >
-          Email <span className="text-accent">*</span>
+          Email <span className="text-accent-dark">*</span>
         </label>
         <input
           type="email"
@@ -142,7 +139,7 @@ export function ContactForm() {
           htmlFor="message"
           className="block text-sm font-medium text-neutral-dark mb-1.5"
         >
-          Message <span className="text-accent">*</span>
+          Message <span className="text-accent-dark">*</span>
         </label>
         <textarea
           id="message"
@@ -157,7 +154,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="bg-primary text-white px-8 py-3.5 rounded-full font-semibold hover:bg-primary-dark transition-colors w-full md:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
+        className="bg-primary text-white px-8 py-3.5 rounded-full font-semibold hover:bg-primary-dark transition-colors w-full md:w-auto disabled:opacity-50"
       >
         {loading ? 'Sending...' : 'Send Message'}
       </button>

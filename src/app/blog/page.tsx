@@ -1,63 +1,40 @@
 import type { Metadata } from 'next'
-import { AnimatedSection } from '@/components/AnimatedSection'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Resources & Insights',
+  title: 'Blog — Resources & Insights',
   description:
-    'Evidence-based resources, patient education, and insights from Ally Rae — speech-language pathologist in Cleveland, Ohio.',
+    'Resources, insights, and articles about adult speech-language pathology from Ally Rae Schwab, CF-SLP in Cleveland, Ohio.',
   alternates: { canonical: 'https://allyraespeech.com/blog' },
-  keywords: [
-    'speech therapy resources Cleveland',
-    'SLP blog',
-    'dysphagia education',
-    'aphasia resources',
-  ],
 }
 
 export default function BlogPage() {
   return (
-    <>
-      <section className="bg-surface py-20 md:py-28">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="max-w-3xl">
-            <p className="text-primary font-semibold text-sm tracking-wide uppercase mb-4">
-              Blog
-            </p>
-            <h1 className="font-serif text-4xl md:text-5xl text-neutral-dark mb-6">
-              Resources &amp; Insights
-            </h1>
-            <p className="text-neutral-mid text-xl leading-relaxed">
-              Evidence-based resources, patient education, and insights from the
-              field of speech-language pathology. Check back soon!
-            </p>
-          </div>
+    <section className="py-20 md:py-28">
+      <div className="mx-auto max-w-3xl px-6 text-center">
+        <p className="text-primary font-semibold text-sm tracking-wide uppercase mb-4">
+          Blog
+        </p>
+        <h1 className="font-serif text-4xl md:text-5xl text-neutral-dark mb-6">
+          Resources &amp; Insights
+        </h1>
+        <p className="text-neutral-mid text-lg leading-relaxed mb-8 max-w-xl mx-auto">
+          Articles and resources about adult speech-language pathology are coming
+          soon. Check back for insights on dysphagia, aphasia, cognitive-communication,
+          and more.
+        </p>
+        <div className="bg-surface rounded-2xl p-10 border border-surface">
+          <p className="text-neutral-mid text-lg italic mb-6">
+            &ldquo;Coming soon — stay tuned for clinical insights and resources.&rdquo;
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary-dark transition-colors"
+          >
+            Get Notified
+          </Link>
         </div>
-      </section>
-
-      <AnimatedSection className="py-20 md:py-28">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="space-y-6">
-              {/* Placeholder cards */}
-              {[1, 2, 3].map((i) => (
-                <div
-                  key={i}
-                  className="bg-surface rounded-2xl p-8 border border-surface animate-pulse"
-                >
-                  <div className="h-4 bg-neutral-mid/10 rounded w-1/4 mb-4" />
-                  <div className="h-6 bg-neutral-mid/10 rounded w-3/4 mb-3" />
-                  <div className="h-4 bg-neutral-mid/10 rounded w-full mb-2" />
-                  <div className="h-4 bg-neutral-mid/10 rounded w-2/3" />
-                </div>
-              ))}
-            </div>
-            <p className="text-neutral-mid mt-10 text-lg">
-              I&apos;ll be sharing evidence-based articles, patient education
-              resources, and clinical insights here soon. Stay tuned!
-            </p>
-          </div>
-        </div>
-      </AnimatedSection>
-    </>
+      </div>
+    </section>
   )
 }
