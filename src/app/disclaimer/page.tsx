@@ -3,7 +3,7 @@ import { SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Disclaimer',
-  description: 'Healthcare disclaimer for allyschwab.com.',
+  description: 'Healthcare disclaimer for allyraespeech.com.',
   alternates: { canonical: `${SITE_URL}/disclaimer` },
 }
 

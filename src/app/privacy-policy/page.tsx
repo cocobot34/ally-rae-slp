@@ -3,7 +3,7 @@ import { CONTACT_EMAIL, SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Privacy policy for allyschwab.com.',
+  description: 'Privacy policy for allyraespeech.com.',
   alternates: { canonical: `${SITE_URL}/privacy-policy` },
 }
 
