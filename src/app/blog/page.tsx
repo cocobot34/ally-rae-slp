@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Blog — Resources & Insights',
   description:
-    'Resources, insights, and articles about adult speech-language pathology from Ally Rae Schwab, CF-SLP in Cleveland, Ohio.',
-  alternates: { canonical: 'https://allyraespeech.com/blog' },
+    'Clinical insights and resources about adult speech-language pathology from Ally Schwab, CF-SLP in Cleveland, Ohio.',
+  alternates: { canonical: `${SITE_URL}/blog` },
 }
 
 export default function BlogPage() {
@@ -19,19 +20,17 @@ export default function BlogPage() {
           Resources &amp; Insights
         </h1>
         <p className="text-neutral-mid text-lg leading-relaxed mb-8 max-w-xl mx-auto">
-          Articles and resources about adult speech-language pathology are coming
-          soon. Check back for insights on dysphagia, aphasia, cognitive-communication,
-          and more.
+          Clinical writing on dysphagia, aphasia, cognitive-communication, and what it&apos;s actually like working in medical SLP. Coming soon.
         </p>
         <div className="bg-surface rounded-2xl p-10 border border-surface">
-          <p className="text-neutral-mid text-lg italic mb-6">
-            &ldquo;Coming soon — stay tuned for clinical insights and resources.&rdquo;
+          <p className="text-neutral-mid text-lg mb-6">
+            I&apos;m working on a few posts right now. In the meantime, feel free to reach out with questions or topics you&apos;d like me to write about.
           </p>
           <Link
             href="/contact"
             className="inline-block bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary-dark transition-colors"
           >
-            Get Notified
+            Suggest a Topic
           </Link>
         </div>
       </div>

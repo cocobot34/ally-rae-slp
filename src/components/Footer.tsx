@@ -9,10 +9,13 @@ export function Footer() {
           {/* Brand */}
           <div>
             <h3 className="font-serif text-xl text-white mb-3">
-              Ally Rae Speech
+              Ally Schwab
             </h3>
             <p className="text-white/70 text-sm leading-relaxed">
-              Evidence-based speech-language pathology for adults in the Greater Cleveland area.
+              MS, CF-SLP · Speech-language pathologist specializing in adult medical rehabilitation in Cleveland, Ohio.
+            </p>
+            <p className="text-accent-light text-sm font-medium mt-3">
+              ✨ Open to Clinical Fellowship opportunities
             </p>
           </div>
 
@@ -26,8 +29,13 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors">
-                  Services
+                <Link href="/experience" className="hover:text-white transition-colors">
+                  Experience
+                </Link>
+              </li>
+              <li>
+                <Link href="/expertise" className="hover:text-white transition-colors">
+                  Expertise
                 </Link>
               </li>
               <li>
@@ -71,18 +79,26 @@ export function Footer() {
                   LinkedIn
                 </a>
               </li>
+              <li>
+                <a
+                  href="/resume-ally-schwab.pdf"
+                  className="hover:text-white transition-colors"
+                  download
+                >
+                  Download Resume (PDF)
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-10 pt-6 border-t border-white/20 text-center text-xs text-white/50">
           <p>
-            © {new Date().getFullYear()} Ally Rae Speech. All rights reserved.
+            © {new Date().getFullYear()} Ally Schwab. All rights reserved.
           </p>
           <p className="mt-2">
             This website is for informational purposes only and does not
-            constitute medical advice. Please consult a qualified healthcare
-            provider for diagnosis and treatment.
+            constitute medical advice.
           </p>
         </div>
       </div>

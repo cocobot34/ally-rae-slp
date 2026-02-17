@@ -2,14 +2,15 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const links = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
-  { href: '/services', label: 'Services' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/experience', label: 'Experience' },
+  { href: '/expertise', label: 'Expertise' },
   { href: '/contact', label: 'Contact' },
 ]
 
@@ -23,8 +24,17 @@ export function Navigation() {
         className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between"
         aria-label="Main navigation"
       >
-        <Link href="/" className="text-xl font-serif text-primary">
-          Ally Rae Speech
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src="/logo.png"
+            alt="Ally Schwab logo"
+            width={36}
+            height={36}
+            className="rounded"
+          />
+          <span className="text-lg font-serif text-primary">
+            Ally Schwab
+          </span>
         </Link>
 
         {/* Desktop nav */}
@@ -47,7 +57,7 @@ export function Navigation() {
             href="/contact"
             className="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-dark transition-colors"
           >
-            Get in Touch
+            Let&apos;s Talk
           </Link>
         </div>
 
@@ -115,7 +125,7 @@ export function Navigation() {
                 onClick={() => setIsOpen(false)}
                 className="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold text-center hover:bg-primary-dark transition-colors"
               >
-                Get in Touch
+                Let&apos;s Talk
               </Link>
             </div>
           </motion.div>

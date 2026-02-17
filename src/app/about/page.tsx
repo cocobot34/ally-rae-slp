@@ -2,40 +2,32 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { AnimatedSection } from '@/components/AnimatedSection'
 import { JsonLd } from '@/components/JsonLd'
+import { SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'About Ally Rae',
+  title: 'About Ally Schwab',
   description:
-    'Learn about Ally Rae Schwab — a speech-language pathologist specializing in adult medical rehabilitation in Cleveland, Ohio. MS from Cleveland State University.',
-  alternates: { canonical: 'https://allyraespeech.com/about' },
+    'Ally Schwab is a speech-language pathologist specializing in adult medical rehabilitation. MS from Cleveland State University, clinical training at Brentwood Healthcare Center.',
+  alternates: { canonical: `${SITE_URL}/about` },
   keywords: [
-    'Ally Rae Schwab SLP',
+    'Ally Schwab SLP',
     'Cleveland State University speech pathology',
     'CF-SLP Cleveland',
-    'speech language pathologist Cleveland Ohio',
+    'medical SLP portfolio',
   ],
 }
 
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  name: 'Ally Rae Schwab',
-  jobTitle: 'Speech-Language Pathologist',
-  worksFor: {
-    '@type': 'MedicalBusiness',
-    name: 'Ally Rae Speech',
-  },
+  name: 'Alexandra R. Schwab',
+  alternateName: 'Ally Schwab',
+  jobTitle: 'Speech-Language Pathologist (CF-SLP)',
   alumniOf: [
-    {
-      '@type': 'CollegeOrUniversity',
-      name: 'Cleveland State University',
-    },
-    {
-      '@type': 'CollegeOrUniversity',
-      name: 'Kent State University',
-    },
+    { '@type': 'CollegeOrUniversity', name: 'Cleveland State University' },
+    { '@type': 'CollegeOrUniversity', name: 'Kent State University' },
   ],
-  url: 'https://allyraespeech.com/about',
+  url: `${SITE_URL}/about`,
   sameAs: ['https://www.linkedin.com/in/ally-schwab'],
 }
 
@@ -45,7 +37,7 @@ export default function AboutPage() {
       <JsonLd data={personSchema} />
 
       {/* Hero */}
-      <section className="bg-surface py-20 md:py-28">
+      <section className="hero-gradient py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <div className="max-w-3xl">
             <p className="text-primary font-semibold text-sm tracking-wide uppercase mb-4">
@@ -55,15 +47,13 @@ export default function AboutPage() {
               Hi, I&apos;m Ally.
             </h1>
             <p className="text-neutral-mid text-xl leading-relaxed">
-              I&apos;m a speech-language pathologist with a passion for helping
-              adults rebuild their communication and reclaim their independence
-              after stroke, brain injury, and neurological conditions.
+              I&apos;m a speech-language pathologist finishing my Master&apos;s at Cleveland State and heading into my Clinical Fellowship. I work with adults — mostly older adults — who are trying to get back to eating, talking, and thinking clearly after a stroke, a brain injury, or a diagnosis that changed everything.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Story */}
+      {/* Why SLP */}
       <AnimatedSection className="py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <div className="max-w-3xl mx-auto">
@@ -72,54 +62,35 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-5 text-neutral-mid text-lg leading-relaxed">
               <p>
-                Communication is at the heart of everything — our relationships,
-                our independence, our identity. When a stroke, injury, or
-                diagnosis disrupts someone&apos;s ability to speak, understand,
-                or even swallow safely, the impact reaches every part of their
-                life.
+                [PLACEHOLDER: Ally — this is the most important paragraph on the site. What moment made you realize this was it? Was there a patient, a class, a rotation? Something specific. Not "I always loved helping people" — the real story. Even 3-4 sentences would transform this section.]
               </p>
               <p>
-                That&apos;s what drew me to medical speech-language pathology.
-                I wanted to be part of the team that helps people find their way
-                back — not just to words, but to connection, confidence, and
-                quality of life.
+                I didn&apos;t start out knowing I&apos;d land in medical SLP. I came into grad school thinking I&apos;d probably end up in schools — it&apos;s where most people picture SLPs working. But my rotations in medical settings changed that. Working with adults who were fighting to recover basic functions — swallowing without aspirating, saying their family&apos;s names, remembering what day it was — that felt urgent in a way I hadn&apos;t experienced before.
               </p>
               <p>
-                My clinical training has taken me from skilled nursing facilities
-                and inpatient rehabilitation to outpatient clinics and school
-                settings. While I value the breadth of this field, my heart is in{' '}
-                <strong>adult medical rehabilitation</strong> — working alongside
-                physicians, occupational therapists, physical therapists, and
-                nursing staff to deliver truly collaborative, patient-centered
-                care.
+                At Brentwood Healthcare Center, I got to work across skilled nursing, memory care, assisted living, and inpatient rehab — sometimes in the same day. I ran bedside swallow evals, participated in FEES and MBS studies, administered cognitive screenings, and coordinated with physicians, OTs, PTs, nurses, and dietary. That range is what I want in a Clinical Fellowship.
               </p>
             </div>
           </div>
         </div>
       </AnimatedSection>
 
-      {/* Approach */}
+      {/* My Approach — completely rewritten, FLAGS 9 & 10 */}
       <AnimatedSection className="py-20 md:py-28 bg-surface">
         <div className="mx-auto max-w-6xl px-6">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-serif text-3xl md:text-4xl text-neutral-dark mb-8">
-              My Approach
+              How I Work
             </h2>
             <div className="space-y-5 text-neutral-mid text-lg leading-relaxed">
               <p>
-                I believe effective therapy starts with listening. Every patient
-                brings a unique history, set of goals, and definition of
-                progress. My job is to meet them where they are and build a plan
-                that&apos;s grounded in the best available evidence — and shaped
-                by what matters most to <em>them</em>.
+                Here&apos;s what I&apos;ve learned so far: the treatment plan is only as good as the assessment, and the assessment is only as good as the conversation that comes before it. Patients tell you what they need if you actually listen — not just to their answers on a standardized screening, but to what they mention offhand. The guy who keeps asking when he can have coffee again. The woman whose first question is always about going home to her dog.
               </p>
               <p>
-                Whether I&apos;m conducting a bedside swallow evaluation,
-                working through language exercises with someone recovering from a
-                stroke, or helping a patient with TBI rebuild their
-                problem-solving skills, I bring the same commitment:
-                compassionate, evidence-based care delivered with warmth and
-                clinical rigor.
+                [PLACEHOLDER: Ally — add an example of a time your listening changed the direction of a treatment plan. Doesn&apos;t need to be dramatic. Could be noticing something small that shifted your approach. Anonymize it.]
+              </p>
+              <p>
+                I use real assessment tools — SLUMS, BIMS, MoCA, MMSE for cognition, bedside swallow evals for dysphagia — and I write documentation that meets Medicare standards. I chart in Net Health. I know what skilled treatment looks like on paper because I&apos;ve been trained to document it properly. But I also know that the best therapy happens when the patient actually wants to be there, and that starts with figuring out what matters to <em>them</em>, not just what&apos;s on the eval.
               </p>
             </div>
           </div>
@@ -158,13 +129,11 @@ export default function AboutPage() {
                 <h3 className="font-semibold text-neutral-dark text-lg">
                   Clinical Fellowship (CF-SLP)
                 </h3>
-                {/* TODO: Update to "CCC-SLP" once certificate is officially conferred by ASHA */}
                 <p className="text-neutral-mid">
-                  Completing ASHA-required Clinical Fellowship under the
-                  supervision of a licensed CCC-SLP
+                  On the ASHA certification track — completing CF under licensed CCC-SLP supervision
                 </p>
                 <p className="text-neutral-mid text-sm mt-1">
-                  CCC-SLP certification in progress
+                  CCC-SLP certification in progress · CPR certified
                 </p>
               </div>
             </div>
@@ -172,151 +141,47 @@ export default function AboutPage() {
         </div>
       </AnimatedSection>
 
-      {/* Clinical Experience Highlights */}
-      <AnimatedSection className="py-20 md:py-28 bg-surface">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="font-serif text-3xl md:text-4xl text-neutral-dark mb-10">
-              Clinical Experience
-            </h2>
-            <div className="space-y-8">
-              <div>
-                <h3 className="font-semibold text-neutral-dark text-lg">
-                  Medical SLP — Skilled Nursing &amp; Rehabilitation
-                </h3>
-                <p className="text-primary text-sm font-medium mb-2">
-                  Brentwood Healthcare Center, Northfield, OH
-                </p>
-                <ul className="text-neutral-mid space-y-2 text-[15px] leading-relaxed list-disc list-inside">
-                  <li>
-                    Assess and treat adults with dysphagia, cognitive-communication
-                    disorders, and dementia across SNF, memory care, and inpatient rehab
-                  </li>
-                  <li>
-                    Perform bedside swallow evaluations and participate in FEES
-                    and MBS instrumental assessments
-                  </li>
-                  <li>
-                    Collaborate within interdisciplinary teams including physicians,
-                    OT, PT, nursing, dietary, and social work
-                  </li>
-                  <li>
-                    Document evaluations and treatment plans in compliance with
-                    Medicare standards
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-semibold text-neutral-dark text-lg">
-                  Adult Outpatient — Aphasia &amp; Voice Therapy
-                </h3>
-                <p className="text-primary text-sm font-medium mb-2">
-                  Cleveland State University Speech &amp; Hearing Clinic
-                </p>
-                <ul className="text-neutral-mid space-y-2 text-[15px] leading-relaxed list-disc list-inside">
-                  <li>
-                    Provided individual therapy targeting respiratory support,
-                    speech intelligibility, and voice production
-                  </li>
-                  <li>
-                    Developed treatment plans using evidence-based approaches for
-                    neurogenic communication disorders
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </AnimatedSection>
-
-      {/* Clinical Skills */}
-      <AnimatedSection className="py-20 md:py-28">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="font-serif text-3xl md:text-4xl text-neutral-dark mb-10">
-              Clinical Skills &amp; Training
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-surface rounded-2xl p-6">
-                <h3 className="font-semibold text-neutral-dark mb-3">
-                  Assessment
-                </h3>
-                <p className="text-neutral-mid text-sm leading-relaxed">
-                  Bedside swallow evaluation, aspiration risk assessment, FEES,
-                  MBS, cognitive screenings (SLUMS, BIMS, MoCA, MMSE),
-                  standardized language and articulation assessments
-                </p>
-              </div>
-              <div className="bg-surface rounded-2xl p-6">
-                <h3 className="font-semibold text-neutral-dark mb-3">
-                  Treatment
-                </h3>
-                <p className="text-neutral-mid text-sm leading-relaxed">
-                  Dysphagia, aphasia, cognitive-communication disorders, voice
-                  disorders, motor speech disorders, TBI rehabilitation, AAC
-                </p>
-              </div>
-              <div className="bg-surface rounded-2xl p-6">
-                <h3 className="font-semibold text-neutral-dark mb-3">
-                  Documentation
-                </h3>
-                <p className="text-neutral-mid text-sm leading-relaxed">
-                  EMR systems (Net Health), Medicare-compliant documentation,
-                  SOAP notes, evaluation reports
-                </p>
-              </div>
-              <div className="bg-surface rounded-2xl p-6">
-                <h3 className="font-semibold text-neutral-dark mb-3">
-                  Populations
-                </h3>
-                <p className="text-neutral-mid text-sm leading-relaxed">
-                  Adults &amp; geriatrics (SNF, memory care, rehabilitation),
-                  pediatrics (PreK-12, private practice)
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </AnimatedSection>
-
-      {/* Personal */}
+      {/* Personal — completely rewritten, FLAG 11 */}
       <AnimatedSection className="py-20 md:py-28 bg-surface">
         <div className="mx-auto max-w-6xl px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="font-serif text-3xl md:text-4xl text-neutral-dark mb-6">
-              Beyond the Clinic
+              Outside of Work
             </h2>
             <p className="text-neutral-mid text-lg leading-relaxed mb-4">
-              When I&apos;m not in the clinic, you&apos;ll find me exploring
-              everything the Cleveland area has to offer. I&apos;m proud to call
-              Northeast Ohio home and I&apos;m committed to serving this
-              community through my career in speech-language pathology.
+              [PLACEHOLDER: Ally — this section needs YOU. What do you actually do when you&apos;re not at a placement? Hiking? Cooking? Reading specific kinds of books? A sport? A pet? A weird hobby? Hiring managers read this section to figure out if you&apos;d be fun to work with. Give them something real — even just 2-3 specific details. &quot;I&apos;m trying to visit every taco spot in Cleveland&quot; is infinitely better than &quot;I enjoy exploring the Cleveland area.&quot;]
             </p>
             <p className="text-neutral-mid text-lg leading-relaxed">
-              I&apos;m also a proud member of NSSLHA and have volunteered with
-              organizations like Operation Smiles and Star Camp, supporting
-              children with disabilities.
+              I&apos;m also a member of NSSLHA and have volunteered with Operation Smiles at Kent State (fundraising for children with cleft palate) and as a camp counselor at Star Camp, a summer program for children with disabilities in Independence, OH.
             </p>
           </div>
         </div>
       </AnimatedSection>
 
-      {/* CTA */}
+      {/* CTA — rewritten, FLAG 12 */}
       <AnimatedSection className="py-20 md:py-28 bg-primary text-white">
         <div className="mx-auto max-w-6xl px-6 text-center">
           <h2 className="font-serif text-3xl md:text-4xl mb-6">
-            Want to connect?
+            I&apos;m looking for the right CF position.
           </h2>
           <p className="text-white/80 text-lg max-w-xl mx-auto mb-8">
-            I&apos;m always happy to talk about speech-language pathology,
-            collaboration opportunities, or my clinical fellowship journey.
+            If you&apos;re hiring a medical SLP who&apos;s trained across settings, writes solid documentation, and genuinely wants to do this work — let&apos;s talk.
           </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-white text-primary px-8 py-3.5 rounded-full font-semibold hover:bg-surface transition-colors"
-          >
-            Get in Touch
-          </Link>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/contact"
+              className="inline-block bg-white text-primary px-8 py-3.5 rounded-full font-semibold hover:bg-surface transition-colors"
+            >
+              Get in Touch
+            </Link>
+            <a
+              href="/resume-ally-schwab.pdf"
+              className="inline-block border-2 border-white text-white px-8 py-3.5 rounded-full font-semibold hover:bg-white/10 transition-colors"
+              download
+            >
+              Download Resume
+            </a>
+          </div>
         </div>
       </AnimatedSection>
     </>

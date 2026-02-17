@@ -6,6 +6,7 @@ import { Footer } from '@/components/Footer'
 import { JsonLd } from '@/components/JsonLd'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from '@/lib/constants'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -22,64 +23,68 @@ const dmSerifDisplay = DM_Serif_Display({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Ally Rae Speech — Cleveland SLP',
-    default: 'Ally Rae Speech | Speech-Language Pathologist in Cleveland, Ohio',
+    template: '%s | Ally Schwab — SLP Portfolio',
+    default: 'Ally Schwab | Speech-Language Pathologist — Cleveland, Ohio',
   },
-  description:
-    'Evidence-based speech therapy for adults in Cleveland, Ohio. Specializing in dysphagia, aphasia, voice disorders, TBI rehabilitation, and cognitive-communication.',
+  description: SITE_DESCRIPTION,
   keywords: [
+    'Ally Schwab SLP',
     'speech language pathologist Cleveland',
-    'adult speech therapy Ohio',
+    'CF-SLP Cleveland Ohio',
+    'medical SLP portfolio',
     'dysphagia treatment Cleveland',
     'aphasia therapy Cleveland',
-    'voice disorder specialist Cleveland Ohio',
-    'TBI speech therapy Cleveland',
   ],
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://allyraespeech.com',
-    siteName: 'Ally Rae Speech',
-    title: 'Ally Rae Speech | Speech-Language Pathologist in Cleveland, Ohio',
-    description:
-      'Evidence-based speech therapy for adults in Cleveland, Ohio. Specializing in dysphagia, aphasia, voice disorders, and cognitive-communication.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Ally Rae Speech — Cleveland SLP' }],
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: 'Ally Schwab | Speech-Language Pathologist — Cleveland, Ohio',
+    description: SITE_DESCRIPTION,
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Ally Schwab — SLP Portfolio' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ally Rae Speech | Cleveland SLP',
-    description:
-      'Evidence-based speech therapy for adults in Cleveland, Ohio.',
+    title: 'Ally Schwab | SLP Portfolio',
+    description: SITE_DESCRIPTION,
     images: ['/og-image.png'],
   },
-  metadataBase: new URL('https://allyraespeech.com'),
+  metadataBase: new URL(SITE_URL),
   alternates: {
-    canonical: 'https://allyraespeech.com',
+    canonical: SITE_URL,
   },
 }
 
-const businessSchema = {
+const personSchema = {
   '@context': 'https://schema.org',
-  '@type': ['MedicalBusiness', 'LocalBusiness'],
-  name: 'Ally Rae Speech',
-  url: 'https://allyraespeech.com',
-  description:
-    'Evidence-based speech therapy for adults in Cleveland, Ohio',
+  '@type': 'Person',
+  name: 'Alexandra R. Schwab',
+  alternateName: 'Ally Schwab',
+  jobTitle: 'Speech-Language Pathologist (CF-SLP)',
+  description: SITE_DESCRIPTION,
+  url: SITE_URL,
+  alumniOf: [
+    {
+      '@type': 'CollegeOrUniversity',
+      name: 'Cleveland State University',
+    },
+    {
+      '@type': 'CollegeOrUniversity',
+      name: 'Kent State University',
+    },
+  ],
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Cleveland',
     addressRegion: 'OH',
     addressCountry: 'US',
   },
-  areaServed: {
-    '@type': 'AdministrativeArea',
-    name: 'Greater Cleveland, Ohio',
-  },
-  medicalSpecialty: [
+  knowsAbout: [
     'Speech-Language Pathology',
-    'Dysphagia',
-    'Aphasia',
-    'Voice Disorders',
+    'Dysphagia Management',
+    'Aphasia Treatment',
+    'Cognitive-Communication Disorders',
     'Traumatic Brain Injury Rehabilitation',
   ],
   sameAs: ['https://www.linkedin.com/in/ally-schwab'],
@@ -102,7 +107,7 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <JsonLd data={businessSchema} />
+        <JsonLd data={personSchema} />
         <Navigation />
         <main id="main-content">{children}</main>
         <Footer />

@@ -1,41 +1,41 @@
 import Link from 'next/link'
 import { AnimatedSection } from '@/components/AnimatedSection'
 
-const services = [
+const expertiseAreas = [
   {
     title: 'Dysphagia & Swallowing',
     description:
-      'Comprehensive evaluation and treatment of swallowing disorders, including bedside assessments and diet modification planning.',
+      'Bedside swallow evaluations, aspiration risk assessment, diet texture modifications, and hands-on experience with FEES and MBS studies.',
     icon: '🫁',
   },
   {
     title: 'Aphasia & Language',
     description:
-      'Restoring communication abilities after stroke or brain injury through evidence-based language therapy approaches.',
+      'Helping adults find their words again after stroke or brain injury — targeting expression, comprehension, reading, and writing.',
     icon: '💬',
   },
   {
     title: 'Cognitive-Communication',
     description:
-      'Addressing memory, attention, problem-solving, and executive function challenges following TBI or neurological conditions.',
+      'Memory, attention, problem-solving, executive function — the invisible challenges after TBI or with dementia that change everything.',
     icon: '🧠',
   },
   {
     title: 'Voice Disorders',
     description:
-      'Treating dysphonia, vocal cord dysfunction, and post-surgical voice rehabilitation with targeted voice therapy techniques.',
+      'Respiratory support, vocal cord function, and voice therapy techniques for dysphonia, vocal fatigue, and post-surgical voice rehab.',
     icon: '🎙️',
   },
   {
-    title: 'Motor Speech Disorders',
+    title: 'Motor Speech',
     description:
-      'Improving speech clarity and intelligibility for adults with dysarthria or apraxia of speech.',
+      'Improving speech clarity for adults with dysarthria or apraxia — Parkinson\'s, stroke, ALS, and other neurological conditions.',
     icon: '🗣️',
   },
   {
     title: 'TBI Rehabilitation',
     description:
-      'Holistic speech-language intervention supporting recovery and functional communication after traumatic brain injury.',
+      'Working within rehab teams to address the full picture — language, cognition, voice, and swallowing — after traumatic brain injury.',
     icon: '💪',
   },
 ]
@@ -44,19 +44,20 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-surface overflow-hidden">
+      <section className="relative hero-gradient overflow-hidden">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32 lg:py-40">
           <div className="max-w-2xl">
-            <p className="text-primary font-semibold text-sm tracking-wide uppercase mb-4">
-              Speech-Language Pathologist · Cleveland, Ohio
-            </p>
+            {/* Open to opportunities badge */}
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-secondary rounded-full animate-pulse" />
+              Seeking Clinical Fellowship positions — Available May 2026
+            </div>
+
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-neutral-dark leading-tight mb-6">
-              Helping adults reclaim their voice, communication, and confidence
+              I help adults get back to the things that matter most.
             </h1>
             <p className="text-neutral-mid text-lg md:text-xl leading-relaxed mb-8 max-w-xl">
-              I&apos;m Ally Rae — a speech-language pathologist specializing in
-              adult rehabilitation. I work with people rebuilding their words,
-              their voice, and their connection to the world around them.
+              I&apos;m Ally Schwab — a speech-language pathologist trained in adult medical rehab. Swallowing, speaking, thinking clearly. The stuff most people take for granted until it&apos;s gone.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -66,14 +67,21 @@ export default function HomePage() {
                 Get in Touch
               </Link>
               <Link
-                href="/about"
+                href="/experience"
                 className="border-2 border-primary text-primary px-8 py-3.5 rounded-full font-semibold hover:bg-primary hover:text-white transition-colors"
               >
-                Learn More
+                See My Experience
               </Link>
+              <a
+                href="/resume-ally-schwab.pdf"
+                className="border-2 border-neutral-mid/30 text-neutral-mid px-8 py-3.5 rounded-full font-semibold hover:border-primary hover:text-primary transition-colors"
+                download
+              >
+                Download Resume ↓
+              </a>
             </div>
             <p className="mt-6 text-neutral-mid text-sm">
-              MS, CF-SLP · Cleveland State University
+              MS, CF-SLP · Cleveland State University · 3.9 GPA
             </p>
           </div>
         </div>
@@ -82,71 +90,65 @@ export default function HomePage() {
         <div className="absolute -right-10 top-10 w-60 h-60 bg-accent/10 rounded-full blur-3xl" />
       </section>
 
-      {/* About Snapshot */}
+      {/* Quick intro — replaces the AI-heavy "Compassionate, Evidence-Based Care" section */}
       <AnimatedSection className="py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="font-serif text-3xl md:text-4xl text-neutral-dark mb-6">
-              Compassionate, Evidence-Based Care
+              Trained across settings. Focused on what I do best.
             </h2>
             <p className="text-neutral-mid text-lg leading-relaxed mb-4">
-              With clinical training spanning skilled nursing, inpatient rehabilitation,
-              and outpatient settings, I bring a patient-centered approach to every
-              interaction. My focus is on adults and geriatric populations navigating
-              communication and swallowing challenges — from stroke recovery to
-              traumatic brain injury rehabilitation.
+              I&apos;ve worked in skilled nursing facilities, inpatient rehab, outpatient clinics, and schools — but adult medical rehab is where I come alive. There&apos;s something about working with someone who just had a stroke and watching them take their first safe swallow, or say their daughter&apos;s name again. That&apos;s the work I want to keep doing.
             </p>
             <p className="text-neutral-mid text-lg leading-relaxed mb-8">
-              I believe that effective therapy begins with understanding each
-              person&apos;s unique story, goals, and strengths.
+              [PLACEHOLDER: Ally — add a sentence or two here about a specific moment in your clinical training that confirmed this was the right path. Something real. Could be at Brentwood, could be at CSU clinic. Keep it brief.]
             </p>
             <Link
               href="/about"
               className="text-primary font-semibold hover:text-primary-dark transition-colors inline-flex items-center gap-2"
             >
-              More About My Approach
+              More about me
               <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>
       </AnimatedSection>
 
-      {/* Services Preview */}
+      {/* Clinical Focus Areas */}
       <AnimatedSection className="py-20 md:py-28 bg-surface">
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center mb-14">
             <h2 className="font-serif text-3xl md:text-4xl text-neutral-dark mb-4">
-              Areas of Expertise
+              Clinical Focus Areas
             </h2>
             <p className="text-neutral-mid text-lg max-w-2xl mx-auto">
-              Specialized in adult medical speech-language pathology with
-              clinical experience across rehabilitation settings.
+              Here&apos;s what I&apos;ve trained in and where I can hit the ground running.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service) => (
+            {expertiseAreas.map((area) => (
               <div
-                key={service.title}
+                key={area.title}
                 className="bg-bg rounded-2xl p-8 hover:shadow-lg transition-shadow border border-surface"
               >
                 <span className="text-3xl mb-4 block" aria-hidden="true">
-                  {service.icon}
+                  {area.icon}
                 </span>
                 <h3 className="font-semibold text-lg text-neutral-dark mb-2">
-                  {service.title}
+                  {area.title}
                 </h3>
                 <p className="text-neutral-mid text-sm leading-relaxed">
-                  {service.description}
+                  {area.description}
                 </p>
               </div>
             ))}
           </div>
           <div className="text-center mt-10">
             <Link
-              href="/services"
+              href="/expertise"
               className="text-primary font-semibold hover:text-primary-dark transition-colors inline-flex items-center gap-2"
             >
-              View All Services
+              See detailed expertise
               <span aria-hidden="true">→</span>
             </Link>
           </div>
@@ -160,7 +162,7 @@ export default function HomePage() {
             <div className="text-center">
               <p className="text-2xl mb-1">🎓</p>
               <p>MS, Speech-Language Pathology</p>
-              <p className="text-xs text-neutral-mid/70">Cleveland State University</p>
+              <p className="text-xs text-neutral-mid/70">Cleveland State · 3.9 GPA</p>
             </div>
             <div className="text-center">
               <p className="text-2xl mb-1">📋</p>
@@ -169,13 +171,13 @@ export default function HomePage() {
             </div>
             <div className="text-center">
               <p className="text-2xl mb-1">🏥</p>
-              <p>Medical SLP Focus</p>
-              <p className="text-xs text-neutral-mid/70">SNF · Rehab · Outpatient</p>
+              <p>500+ Clinical Hours</p>
+              <p className="text-xs text-neutral-mid/70">SNF · Rehab · Outpatient · Schools</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl mb-1">❤️</p>
-              <p>CPR Certified</p>
-              <p className="text-xs text-neutral-mid/70">Current</p>
+              <p className="text-2xl mb-1">🔬</p>
+              <p>FEES & MBS Trained</p>
+              <p className="text-xs text-neutral-mid/70">Instrumental Assessment</p>
             </div>
           </div>
         </div>
@@ -185,12 +187,12 @@ export default function HomePage() {
       <AnimatedSection className="py-16 bg-surface">
         <div className="mx-auto max-w-6xl px-6 text-center">
           <div className="max-w-xl mx-auto bg-bg rounded-2xl p-8 border border-surface">
-            <p className="text-3xl mb-4" aria-hidden="true">
-              💬
+            <p className="text-3xl mb-4" aria-hidden="true">💬</p>
+            <p className="text-neutral-mid italic text-lg leading-relaxed mb-4">
+              [PLACEHOLDER: Ally — if any clinical supervisors or professors would write you a brief quote about your work, this would be the highest-impact addition to this site. Even 1-2 sentences from your Brentwood supervisor would be gold.]
             </p>
-            <p className="text-neutral-mid italic text-lg leading-relaxed">
-              &ldquo;Testimonials from clinical colleagues and supervisors
-              coming soon.&rdquo;
+            <p className="text-neutral-mid text-sm">
+              Supervisor recommendations coming soon.
             </p>
           </div>
         </div>
@@ -200,19 +202,26 @@ export default function HomePage() {
       <AnimatedSection className="py-20 md:py-28 bg-primary text-white">
         <div className="mx-auto max-w-6xl px-6 text-center">
           <h2 className="font-serif text-3xl md:text-4xl mb-6">
-            Let&apos;s Connect
+            Looking for a medical SLP who&apos;s ready to work?
           </h2>
           <p className="text-white/80 text-lg max-w-2xl mx-auto mb-8">
-            Whether you&apos;re a fellow clinician, a potential employer, or
-            someone seeking information about speech-language pathology services
-            — I&apos;d love to hear from you.
+            I&apos;m finishing my MS in May 2026 and actively seeking Clinical Fellowship positions in adult medical rehab — SNF, acute care, inpatient rehab, or outpatient neuro. If you&apos;re hiring, I&apos;d love to talk.
           </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-white text-primary px-8 py-3.5 rounded-full font-semibold hover:bg-surface transition-colors"
-          >
-            Get in Touch
-          </Link>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/contact"
+              className="inline-block bg-white text-primary px-8 py-3.5 rounded-full font-semibold hover:bg-surface transition-colors"
+            >
+              Get in Touch
+            </Link>
+            <a
+              href="/resume-ally-schwab.pdf"
+              className="inline-block border-2 border-white text-white px-8 py-3.5 rounded-full font-semibold hover:bg-white/10 transition-colors"
+              download
+            >
+              Download Resume
+            </a>
+          </div>
         </div>
       </AnimatedSection>
     </>
