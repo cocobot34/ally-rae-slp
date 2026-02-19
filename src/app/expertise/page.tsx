@@ -6,7 +6,7 @@ import { SITE_URL } from '@/lib/constants'
 export const metadata: Metadata = {
   title: 'Clinical Expertise',
   description:
-    'Ally Schwab\'s clinical focus areas: dysphagia, aphasia, cognitive-communication, voice disorders, motor speech, and TBI rehabilitation.',
+    'Ally Rae\'s clinical focus areas: dysphagia, aphasia, cognitive-communication, voice disorders, motor speech, and TBI rehabilitation.',
   alternates: { canonical: `${SITE_URL}/expertise` },
   keywords: [
     'dysphagia treatment',

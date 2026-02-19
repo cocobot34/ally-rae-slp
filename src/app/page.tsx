@@ -57,7 +57,7 @@ export default function HomePage() {
               I help adults get back to the things that matter most.
             </h1>
             <p className="text-neutral-mid text-lg md:text-xl leading-relaxed mb-8 max-w-xl">
-              I&apos;m Ally Schwab — a speech-language pathologist trained in adult medical rehab. Swallowing, speaking, thinking clearly. The stuff most people take for granted until it&apos;s gone.
+              I&apos;m Ally Rae — a speech-language pathologist trained in adult medical rehab. Swallowing, speaking, thinking clearly. The stuff most people take for granted until it&apos;s gone.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -73,7 +73,7 @@ export default function HomePage() {
                 See My Experience
               </Link>
               <a
-                href="/resume-ally-schwab.pdf"
+                href="/resume-ally-rae.pdf"
                 className="border-2 border-neutral-mid/30 text-neutral-mid px-8 py-3.5 rounded-full font-semibold hover:border-primary hover:text-primary transition-colors"
                 download
               >
@@ -101,7 +101,7 @@ export default function HomePage() {
               I&apos;ve worked in skilled nursing facilities, inpatient rehab, outpatient clinics, and schools — but adult medical rehab is where I come alive. There&apos;s something about working with someone who just had a stroke and watching them take their first safe swallow, or say their daughter&apos;s name again. That&apos;s the work I want to keep doing.
             </p>
             <p className="text-neutral-mid text-lg leading-relaxed mb-8">
-              [PLACEHOLDER: Ally — add a sentence or two here about a specific moment in your clinical training that confirmed this was the right path. Something real. Could be at Brentwood, could be at CSU clinic. Keep it brief.]
+              [ALLY — add a sentence or two here about a specific moment in your clinical training that confirmed this was the right path. Something real. Could be at Brentwood, could be at CSU clinic. Keep it brief.]
             </p>
             <Link
               href="/about"
@@ -189,7 +189,7 @@ export default function HomePage() {
           <div className="max-w-xl mx-auto bg-bg rounded-2xl p-8 border border-surface">
             <p className="text-3xl mb-4" aria-hidden="true">💬</p>
             <p className="text-neutral-mid italic text-lg leading-relaxed mb-4">
-              [PLACEHOLDER: Ally — if any clinical supervisors or professors would write you a brief quote about your work, this would be the highest-impact addition to this site. Even 1-2 sentences from your Brentwood supervisor would be gold.]
+              [ALLY — if any clinical supervisors or professors would write you a brief quote about your work, this would be the highest-impact addition to this site. Even 1-2 sentences from your Brentwood supervisor would be gold.]
             </p>
             <p className="text-neutral-mid text-sm">
               Supervisor recommendations coming soon.
@@ -215,7 +215,7 @@ export default function HomePage() {
               Get in Touch
             </Link>
             <a
-              href="/resume-ally-schwab.pdf"
+              href="/resume-ally-rae.pdf"
               className="inline-block border-2 border-white text-white px-8 py-3.5 rounded-full font-semibold hover:bg-white/10 transition-colors"
               download
             >

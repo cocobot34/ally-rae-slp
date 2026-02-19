@@ -6,7 +6,7 @@ import { SITE_URL } from '@/lib/constants'
 export const metadata: Metadata = {
   title: 'Clinical Experience',
   description:
-    'Ally Schwab\'s clinical placements and fieldwork experience across medical SLP, school-based, and outpatient settings.',
+    'Ally Rae\'s clinical placements and fieldwork experience across medical SLP, school-based, and outpatient settings.',
   alternates: { canonical: `${SITE_URL}/experience` },
 }
 
@@ -225,7 +225,7 @@ export default function ExperiencePage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="/resume-ally-schwab.pdf"
+              href="/resume-ally-rae.pdf"
               className="inline-block bg-white text-primary px-8 py-3.5 rounded-full font-semibold hover:bg-surface transition-colors"
               download
             >

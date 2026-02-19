@@ -21,7 +21,7 @@ export default function DisclaimerPage() {
 
         <h2 className="font-serif text-2xl text-neutral-dark mt-10 mb-4">No Professional Relationship</h2>
         <p className="text-neutral-mid leading-relaxed mb-4">
-          Viewing this website or contacting Ally Schwab through the contact form does not establish a clinician-patient relationship. A clinician-patient relationship is only formed through a formal evaluation and agreement to provide services.
+          Viewing this website or contacting Ally Rae through the contact form does not establish a clinician-patient relationship. A clinician-patient relationship is only formed through a formal evaluation and agreement to provide services.
         </p>
 
         <h2 className="font-serif text-2xl text-neutral-dark mt-10 mb-4">Seek Professional Help</h2>
@@ -36,7 +36,7 @@ export default function DisclaimerPage() {
 
         <h2 className="font-serif text-2xl text-neutral-dark mt-10 mb-4">Accuracy of Information</h2>
         <p className="text-neutral-mid leading-relaxed">
-          While every effort is made to ensure accuracy, Ally Schwab makes no warranties regarding the completeness, accuracy, or reliability of any content. Information is subject to change without notice.
+          While every effort is made to ensure accuracy, Ally Rae makes no warranties regarding the completeness, accuracy, or reliability of any content. Information is subject to change without notice.
         </p>
       </div>
     </section>

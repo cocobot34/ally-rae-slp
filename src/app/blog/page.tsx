@@ -5,7 +5,7 @@ import { SITE_URL } from '@/lib/constants'
 export const metadata: Metadata = {
   title: 'Blog — Resources & Insights',
   description:
-    'Clinical insights and resources about adult speech-language pathology from Ally Schwab, CF-SLP in Cleveland, Ohio.',
+    'Clinical insights and resources about adult speech-language pathology from Ally Rae, CF-SLP in Cleveland, Ohio.',
   alternates: { canonical: `${SITE_URL}/blog` },
 }
 

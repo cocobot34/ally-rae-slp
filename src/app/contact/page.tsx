@@ -6,7 +6,7 @@ import { CONTACT_EMAIL, SITE_URL } from '@/lib/constants'
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Get in touch with Ally Schwab — speech-language pathologist in Cleveland, Ohio. Open to Clinical Fellowship positions and professional collaboration.',
+    'Get in touch with Ally Rae — speech-language pathologist in Cleveland, Ohio. Open to Clinical Fellowship positions and professional collaboration.',
   alternates: { canonical: `${SITE_URL}/contact` },
 }
 
@@ -91,7 +91,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <a
-                  href="/resume-ally-schwab.pdf"
+                  href="/resume-ally-rae.pdf"
                   className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary-dark transition-colors text-sm"
                   download
                 >

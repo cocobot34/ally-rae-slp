@@ -36,7 +36,7 @@ export default function PrivacyPolicyPage() {
 
         <h2 className="font-serif text-2xl text-neutral-dark mt-10 mb-4">Contact</h2>
         <p className="text-neutral-mid leading-relaxed mb-4">
-          If you have questions about this privacy policy, please contact Ally Schwab at{' '}
+          If you have questions about this privacy policy, please contact Ally Rae at{' '}
           <a href={`mailto:${CONTACT_EMAIL}`} className="text-primary hover:text-primary-dark">
             {CONTACT_EMAIL}
           </a>.

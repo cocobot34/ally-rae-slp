@@ -5,12 +5,12 @@ import { JsonLd } from '@/components/JsonLd'
 import { SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'About Ally Schwab',
+  title: 'About Ally Rae',
   description:
-    'Ally Schwab is a speech-language pathologist specializing in adult medical rehabilitation. MS from Cleveland State University, clinical training at Brentwood Healthcare Center.',
+    'Ally Rae is a speech-language pathologist specializing in adult medical rehabilitation. MS from Cleveland State University, clinical training at Brentwood Healthcare Center.',
   alternates: { canonical: `${SITE_URL}/about` },
   keywords: [
-    'Ally Schwab SLP',
+    'Ally Rae SLP',
     'Cleveland State University speech pathology',
     'CF-SLP Cleveland',
     'medical SLP portfolio',
@@ -21,7 +21,7 @@ const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Alexandra R. Schwab',
-  alternateName: 'Ally Schwab',
+  alternateName: 'Ally Rae',
   jobTitle: 'Speech-Language Pathologist (CF-SLP)',
   alumniOf: [
     { '@type': 'CollegeOrUniversity', name: 'Cleveland State University' },
@@ -62,7 +62,7 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-5 text-neutral-mid text-lg leading-relaxed">
               <p>
-                [PLACEHOLDER: Ally — this is the most important paragraph on the site. What moment made you realize this was it? Was there a patient, a class, a rotation? Something specific. Not "I always loved helping people" — the real story. Even 3-4 sentences would transform this section.]
+                [ALLY — this is the most important paragraph on the site. What moment made you realize this was it? Was there a patient, a class, a rotation? Something specific. Not "I always loved helping people" — the real story. Even 3-4 sentences would transform this section.]
               </p>
               <p>
                 I didn&apos;t start out knowing I&apos;d land in medical SLP. I came into grad school thinking I&apos;d probably end up in schools — it&apos;s where most people picture SLPs working. But my rotations in medical settings changed that. Working with adults who were fighting to recover basic functions — swallowing without aspirating, saying their family&apos;s names, remembering what day it was — that felt urgent in a way I hadn&apos;t experienced before.
@@ -82,12 +82,13 @@ export default function AboutPage() {
             <h2 className="font-serif text-3xl md:text-4xl text-neutral-dark mb-8">
               How I Work
             </h2>
+            {/* [ALLY: please verify — this section is our best guess at your workflow based on your resume and placements. Read through and correct anything that doesn't match how you'd actually describe your approach.] */}
             <div className="space-y-5 text-neutral-mid text-lg leading-relaxed">
               <p>
                 Here&apos;s what I&apos;ve learned so far: the treatment plan is only as good as the assessment, and the assessment is only as good as the conversation that comes before it. Patients tell you what they need if you actually listen — not just to their answers on a standardized screening, but to what they mention offhand. The guy who keeps asking when he can have coffee again. The woman whose first question is always about going home to her dog.
               </p>
               <p>
-                [PLACEHOLDER: Ally — add an example of a time your listening changed the direction of a treatment plan. Doesn&apos;t need to be dramatic. Could be noticing something small that shifted your approach. Anonymize it.]
+                [ALLY: add an example of a time your listening changed the direction of a treatment plan. Doesn&apos;t need to be dramatic. Could be noticing something small that shifted your approach. Anonymize it.]
               </p>
               <p>
                 I use real assessment tools — SLUMS, BIMS, MoCA, MMSE for cognition, bedside swallow evals for dysphagia — and I write documentation that meets Medicare standards. I chart in Net Health. I know what skilled treatment looks like on paper because I&apos;ve been trained to document it properly. But I also know that the best therapy happens when the patient actually wants to be there, and that starts with figuring out what matters to <em>them</em>, not just what&apos;s on the eval.
@@ -149,7 +150,7 @@ export default function AboutPage() {
               Outside of Work
             </h2>
             <p className="text-neutral-mid text-lg leading-relaxed mb-4">
-              [PLACEHOLDER: Ally — this section needs YOU. What do you actually do when you&apos;re not at a placement? Hiking? Cooking? Reading specific kinds of books? A sport? A pet? A weird hobby? Hiring managers read this section to figure out if you&apos;d be fun to work with. Give them something real — even just 2-3 specific details. &quot;I&apos;m trying to visit every taco spot in Cleveland&quot; is infinitely better than &quot;I enjoy exploring the Cleveland area.&quot;]
+              [ALLY — this section needs YOU. What do you actually do when you&apos;re not at a placement? Hiking? Cooking? Reading specific kinds of books? A sport? A pet? A weird hobby? Hiring managers read this section to figure out if you&apos;d be fun to work with. Give them something real — even just 2-3 specific details. &quot;I&apos;m trying to visit every taco spot in Cleveland&quot; is infinitely better than &quot;I enjoy exploring the Cleveland area.&quot;]
             </p>
             <p className="text-neutral-mid text-lg leading-relaxed">
               I&apos;m also a member of NSSLHA and have volunteered with Operation Smiles at Kent State (fundraising for children with cleft palate) and as a camp counselor at Star Camp, a summer program for children with disabilities in Independence, OH.
@@ -175,7 +176,7 @@ export default function AboutPage() {
               Get in Touch
             </Link>
             <a
-              href="/resume-ally-schwab.pdf"
+              href="/resume-ally-rae.pdf"
               className="inline-block border-2 border-white text-white px-8 py-3.5 rounded-full font-semibold hover:bg-white/10 transition-colors"
               download
             >

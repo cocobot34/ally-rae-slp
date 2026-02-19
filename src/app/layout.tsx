@@ -23,12 +23,12 @@ const dmSerifDisplay = DM_Serif_Display({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Ally Schwab — SLP Portfolio',
-    default: 'Ally Schwab | Speech-Language Pathologist — Cleveland, Ohio',
+    template: '%s | Ally Rae — SLP Portfolio',
+    default: 'Ally Rae | Speech-Language Pathologist — Cleveland, Ohio',
   },
   description: SITE_DESCRIPTION,
   keywords: [
-    'Ally Schwab SLP',
+    'Ally Rae SLP',
     'speech language pathologist Cleveland',
     'CF-SLP Cleveland Ohio',
     'medical SLP portfolio',
@@ -40,13 +40,13 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: 'Ally Schwab | Speech-Language Pathologist — Cleveland, Ohio',
+    title: 'Ally Rae | Speech-Language Pathologist — Cleveland, Ohio',
     description: SITE_DESCRIPTION,
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Ally Schwab — SLP Portfolio' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Ally Rae — SLP Portfolio' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ally Schwab | SLP Portfolio',
+    title: 'Ally Rae | SLP Portfolio',
     description: SITE_DESCRIPTION,
     images: ['/og-image.png'],
   },
@@ -60,7 +60,7 @@ const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Alexandra R. Schwab',
-  alternateName: 'Ally Schwab',
+  alternateName: 'Ally Rae',
   jobTitle: 'Speech-Language Pathologist (CF-SLP)',
   description: SITE_DESCRIPTION,
   url: SITE_URL,

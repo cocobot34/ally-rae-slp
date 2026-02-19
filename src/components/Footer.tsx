@@ -9,7 +9,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <h3 className="font-serif text-xl text-white mb-3">
-              Ally Schwab
+              Ally Rae
             </h3>
             <p className="text-white/70 text-sm leading-relaxed">
               MS, CF-SLP · Speech-language pathologist specializing in adult medical rehabilitation in Cleveland, Ohio.
@@ -81,7 +81,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="/resume-ally-schwab.pdf"
+                  href="/resume-ally-rae.pdf"
                   className="hover:text-white transition-colors"
                   download
                 >
@@ -94,7 +94,7 @@ export function Footer() {
 
         <div className="mt-10 pt-6 border-t border-white/20 text-center text-xs text-white/50">
           <p>
-            © {new Date().getFullYear()} Ally Schwab. All rights reserved.
+            © {new Date().getFullYear()} Ally Rae. All rights reserved.
           </p>
           <p className="mt-2">
             This website is for informational purposes only and does not

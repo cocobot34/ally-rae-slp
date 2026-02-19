@@ -27,13 +27,13 @@ export function Navigation() {
         <Link href="/" className="flex items-center gap-3">
           <Image
             src="/logo.png"
-            alt="Ally Schwab logo"
+            alt="Ally Rae logo"
             width={36}
             height={36}
             className="rounded"
           />
           <span className="text-lg font-serif text-primary">
-            Ally Schwab
+            Ally Rae
           </span>
         </Link>
 
